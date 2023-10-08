@@ -3,3 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
+/* AppComponent's private CSS styles */
+h1 {
+    margin-bottom: 0;
+}

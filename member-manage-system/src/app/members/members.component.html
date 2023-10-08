@@ -1,12 +1,11 @@
-<h2>Members</h2>
+<div id="member">
+  <h2>Members</h2>
 
-<ul class="members">
-  <li *ngFor="let member of members">
-    <button [class.selected]="member === selectedMember" type="button" (click)="onSelect(member)">
-        <span class="badge">{{member.id}}</span>
-        <span class="name">{{member.name}}</span>
-    </button>
-</li>
-</ul>
-
-<app-member-detail [member]="selectedMember"></app-member-detail>
+  <ul class="members">
+    <li *ngFor="let member of members">
+      <a routerLink="/detail/{{member.id}}">
+          <span class="badge">{{member.id}}</span> {{member.name}}
+      </a>
+    </li>
+  </ul>
+</div>

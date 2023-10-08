@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
-import { MEMBERS } from '../mock-members';
+import { Component, OnInit } from '@angular/core';
 import { Member } from '../member';
+import { MemberService } from '../member.service';
 
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
   styleUrls: ['./members.component.css']
 })
-export class MembersComponent {
+export class MembersComponent implements OnInit{
+  
+  members : Member[]=[];
 
-  members = MEMBERS;
+constructor(private memberservice: MemberService){}
 
-  selectedMember?: Member;
+ngOnInit(): void {
+  this.getMembers();
+}
 
-  onSelect(member: Member): void {
-    this.selectedMember = member;
-  }
+  getMembers(): void {
+    this.memberservice.getMembers()
+    .subscribe(members => this.members = members);  }
 
 }
