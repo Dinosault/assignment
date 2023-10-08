@@ -1,7 +1,7 @@
 <mat-toolbar id="toolbar" color="primary">
     <span>Member_Manage_System</span>
     <div>    
-        <a mat-button>
+        <a mat-button routerLink="/signup">
             <mat-icon>add</mat-icon>
             <span>Sign up</span>
         </a>
@@ -9,9 +9,10 @@
             <mat-icon>login</mat-icon>
             <span>Log in</span>
         </a>
-        <a mat-button>
+        <a mat-button routerLink="/members">
             <mat-icon>account_circle</mat-icon>
             <span>Members</span>
         </a>
     </div>
 </mat-toolbar>
+<router-outlet></router-outlet>

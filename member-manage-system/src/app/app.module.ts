@@ -10,12 +10,19 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { SignupComponent } from './signup/signup.component';
+import { MembersComponent } from './members/members.component';
+import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { MemberSearchComponent } from './member-search/member-search.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
+    MembersComponent,
+    MemberDetailComponent,
+    MemberSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,8 @@ import { SignupComponent } from './signup/signup.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
