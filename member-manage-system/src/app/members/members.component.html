@@ -8,4 +8,13 @@
       </a>
     </li>
   </ul>
+  <div>
+    <label for="new-member">Member name: </label>
+    <input id="new-member" #memberName />
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="button" class="add-button" (click)="add(memberName.value); memberName.value=''">
+      Add member
+    </button>
+  </div>
 </div>

@@ -5,5 +5,9 @@
         <label for="member-name">Member name: </label>
         <input id="member-name" [(ngModel)]="member.name" placeholder="Member name"/>
     </div>
-    <button type="button" (click)="goBack()">go back</button>
+    <div id="function">
+        <button type="button" (click)="goBack()">go back</button>
+        <button type="button" (click)="save()">save</button>
+    </div>
 </div>
+<app-messages></app-messages>
