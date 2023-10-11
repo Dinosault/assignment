@@ -67,9 +67,30 @@ button:hover {
     color: indigo;
 }
 input {
-    display: block;
-    width: 100%;
-    padding: .5rem;
-    margin: 1rem 0;
+    padding: 0.5rem;
+    width: 80%;
+    max-width: 600px;
     box-sizing: border-box;
+    display: block;
+}
+button.delete {
+    position: absolute;
+    left: 195px;
+    top: 3px;
+    background-color: yellow;
+    color:  darkred;
+    border:none;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 1px 10px 3px 10px;
+}
+button.delete:hover {
+    background-color: darkred;
+    color: yellow;
+}
+#newmember{
+    display: block;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }

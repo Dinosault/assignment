@@ -1,15 +1,19 @@
 <div id="member">
-  <h2>Members</h2>
+  <h1>Members</h1>
+
+  <app-member-search></app-member-search>
 
   <ul class="members">
     <li *ngFor="let member of members">
       <a routerLink="/detail/{{member.id}}">
           <span class="badge">{{member.id}}</span> {{member.name}}
       </a>
+      <button type="button" class="delete" title="delete member"
+  (click)="delete(member)">x</button>
     </li>
   </ul>
   <div>
-    <label for="new-member">Member name: </label>
+    <label id="newmember" for="new-member">Member name: </label>
     <input id="new-member" #memberName />
 
     <!-- (click) passes input value to add() and then clears the input -->

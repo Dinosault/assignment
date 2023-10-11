@@ -77,6 +77,30 @@ export class MemberService {
       tap((newMember: Member) => this.log(`added member w/ id=${newMember.id}`)),
       catchError(this.handleError<Member>('addMember'))
   );
+  }
+
+  /** DELETE: delete the hero from the server */
+  deleteMember(id: number): Observable<Member> {
+    const url = `${this.membersUrl}/${id}`;
+
+    return this.http.delete<Member>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted member id=${id}`)),
+      catchError(this.handleError<Member>('deleteMember'))
+    );
+  }
+
+  /* GET heroes whose name contains search term */
+searchHeroes(term: string): Observable<Member[]> {
+  if (!term.trim()) {
+    // if not search term, return empty hero array.
+    return of([]);
+  }
+  return this.http.get<Member[]>(`${this.membersUrl}/?name=${term}`).pipe(
+    tap(x => x.length ?
+        this.log(`found members matching "${term}"`) :
+        this.log(`no members matching "${term}"`)),
+    catchError(this.handleError<Member[]>('searchMembers', []))
+  );
 }
 
 }

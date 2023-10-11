@@ -33,4 +33,9 @@ export class MembersComponent implements OnInit{
       });
   }
 
+  delete(member: Member): void {
+    this.members = this.members.filter(m => m !== member);
+    this.memberservice.deleteMember(member.id).subscribe();
+  }
+
 }
