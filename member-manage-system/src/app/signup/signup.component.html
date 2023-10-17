@@ -1,1 +1,11 @@
-<p>signup works!</p>
+<div id="signup">
+    <h1>Sign up</h1>
+        <label id="newmember" for="new-member">Your Name: </label>
+        <input id="new-member" [(ngModel)]="inputValue" #memberName />
+
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="button" class="add-button" (click)="add(memberName.value); memberName.value=''">
+            <a *ngIf="inputValue.trim() != ''" routerLink="/members">Sign up</a>
+            <span *ngIf="inputValue.trim() == ''">輸入值不能是空的</span>
+        </button>
+</div>
