@@ -1,24 +1,26 @@
 <div id="member">
   <h1>Members</h1>
 
-  <app-member-search></app-member-search>
+  <div *ngIf="loginService.isLoggedIn">
+    <app-member-search></app-member-search>
 
-  <ul class="members">
-    <li *ngFor="let member of members">
-      <a routerLink="/detail/{{member.id}}">
-          <span class="badge">{{member.id}}</span> {{member.name}}
-      </a>
-      <button type="button" class="delete" title="delete member"
-  (click)="delete(member)">x</button>
-    </li>
-  </ul>
-  <div>
-    <label id="newmember" for="new-member">Member name: </label>
-    <input id="new-member" #memberName />
+    <ul class="members">
+      <li *ngFor="let member of members">
+        <a routerLink="/detail/{{member.id}}">
+            <span class="badge">{{member.id}}</span> {{member.name}}
+        </a>
+        <button type="button" class="delete" title="delete member"
+    (click)="delete(member)">x</button>
+      </li>
+    </ul>
+    <div>
+      <label id="newmember" for="new-member">Member name: </label>
+      <input id="new-member" #memberName />
 
-    <!-- (click) passes input value to add() and then clears the input -->
-    <button type="button" class="add-button" (click)="add(memberName.value); memberName.value=''">
-      Add member
-    </button>
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button type="button" class="add-button" (click)="add(memberName.value); memberName.value=''">
+        Add member
+      </button>
+    </div>
   </div>
 </div>

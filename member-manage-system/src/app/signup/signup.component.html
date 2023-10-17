@@ -5,7 +5,7 @@
 
         <!-- (click) passes input value to add() and then clears the input -->
         <button type="button" class="add-button" (click)="add(memberName.value); memberName.value=''">
-            <a *ngIf="inputValue.trim() != ''" routerLink="/members">Sign up</a>
+            <a *ngIf="inputValue.trim() != ''" (click)="login()" routerLink="/members">Sign up</a>
             <span *ngIf="inputValue.trim() == ''">輸入值不能是空的</span>
         </button>
 </div>

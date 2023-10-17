@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Member } from '../member';
 import { MemberService } from '../member.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,12 @@ export class SignupComponent {
 
   constructor(
     private memberservice: MemberService,
+    public loginService: LoginService,
     ){}
+
+  login(){
+    this.loginService.login();
+  }
 
   add(name: string): void {
     name = name.trim();

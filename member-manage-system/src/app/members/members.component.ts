@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Member } from '../member';
 import { MemberService } from '../member.service';
 import { MessageService } from '../message.service';
-
+import { LoginService } from '../login.service';
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
@@ -12,8 +12,11 @@ export class MembersComponent implements OnInit{
 
   members : Member[]=[];
 
-  constructor(private memberservice: MemberService,
-    private messageService: MessageService){}
+  constructor(
+    private memberservice: MemberService,
+    private messageService: MessageService,
+    public loginService: LoginService,
+    ){}
 
   ngOnInit(): void {
     this.getMembers();
@@ -38,4 +41,7 @@ export class MembersComponent implements OnInit{
     this.memberservice.deleteMember(member.id).subscribe();
   }
 
+  login(){
+    this.loginService.login();
+  }
 }
