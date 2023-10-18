@@ -1,0 +1,35 @@
+button {
+    margin: 10px 20px;
+    background-color: indigo;
+    color: #fff;
+    border: solid black 2px;
+    padding: 0.7rem;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+button:hover {
+    background-color: #cfd8dc;
+    color: indigo;
+}
+#signup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid black 4px;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 3em;
+}
+input {
+    padding: 0.5rem;
+    width: 20%;
+    max-width: 600px;
+    box-sizing: border-box;
+    display: block;
+}
+#newmember{
+    display: block;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
